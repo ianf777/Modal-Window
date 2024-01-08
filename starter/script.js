@@ -22,3 +22,10 @@ for (let i = 0; i < btnsOpenModal.length; i++) {
   btnCloseModal.addEventListener('click', closeModal);
   overlay.addEventListener('click', closeModal);
 }
+
+//add an event listener for whenever a key is pressed, use the .key method to access info for which key is being pressed, if the key being pressed is escape, launch another check to see if the modal is open. If modal is open, use 'closeModal' function to close it with the esc key.
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+    closeModal();
+  }
+});
